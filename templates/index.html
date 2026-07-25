@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prediksi Weekly Sales — Walmart</title>
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <!-- Header Navbar -->
+  <header class="navbar">
+    <div class="navbar-brand">
+      <div class="logo-icon">
+        <i class="fa-solid fa-chart-line"></i>
+      </div>
+      <div>
+        <h1>Walmart Sales Predictor</h1>
+        <p>Aplikasi Prediksi Weekly Sales & Analytics</p>
+      </div>
+    </div>
+    <div class="badge-model">
+      <i class="fa-solid fa-microchip"></i> Model: XGBoost Regressor
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="wrapper">
+    <div class="app-layout">
+      
+      <!-- ======================================================== -->
+      <!-- LEFT PANEL: INPUT FORM                                    -->
+      <!-- ======================================================== -->
+      <section class="panel-card">
+        <div class="panel-header">
+          <h2><i class="fa-solid fa-sliders"></i> Form Input Data</h2>
+        </div>
+        <div class="panel-body">
+          <form method="POST" action="/">
+            
+            <!-- Store Selection Custom Control -->
+            <div class="form-group">
+              <label for="store">Nomor Toko (Store 1 - 45) <span style="color: var(--rose-500);">*</span></label>
+              <div class="store-input-container">
+                <div class="store-input-wrapper">
+                  <i class="fa-solid fa-store store-input-icon"></i>
+                  <input type="number" name="store" id="store" min="1" max="45"
+                         value="{{ selected_store }}" placeholder="Ketik angka 1-45..." required>
+                </div>
+                <button type="button" class="btn-store-picker" id="open-store-modal">
+                  <i class="fa-solid fa-border-all"></i> Cari Toko
+                </button>
+              </div>
+            </div>
+
+            <!-- 4-Week Historical Input -->
+            <div class="form-section-title">
+              <i class="fa-solid fa-clock-rotate-left"></i> Histori 4 Minggu Terakhir (Rp)
+            </div>
+
+            <div class="grid-inputs">
+              <div class="form-group">
+                <label for="sales_w1">
+                  1 Minggu Lalu <span class="sub-label" style="color: var(--primary); font-weight: 700;">(W1 - Paling Baru)</span>
+                </label>
+                <div class="input-group-prefix">
+                  <span class="input-prefix-badge">Rp</span>
+                  <input type="text" inputmode="numeric" name="sales_w1" id="sales_w1"
+                         class="currency-input"
+                         placeholder="contoh: 1.704.357.620"
+                         value="{{ form_data.get('sales_w1', '') }}" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="sales_w2">
+                  2 Minggu Lalu <span class="sub-label">(W2)</span>
+                </label>
+                <div class="input-group-prefix">
+                  <span class="input-prefix-badge">Rp</span>
+                  <input type="text" inputmode="numeric" name="sales_w2" id="sales_w2"
+                         class="currency-input"
+                         placeholder="contoh: 1.590.274.720"
+                         value="{{ form_data.get('sales_w2', '') }}" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="sales_w3">
+                  3 Minggu Lalu <span class="sub-label">(W3)</span>
+                </label>
+                <div class="input-group-prefix">
+                  <span class="input-prefix-badge">Rp</span>
+                  <input type="text" inputmode="numeric" name="sales_w3" id="sales_w3"
+                         class="currency-input"
+                         placeholder="contoh: 1.639.585.610"
+                         value="{{ form_data.get('sales_w3', '') }}" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="sales_w4">
+                  4 Minggu Lalu <span class="sub-label">(W4)</span>
+                </label>
+                <div class="input-group-prefix">
+                  <span class="input-prefix-badge">Rp</span>
+                  <input type="text" inputmode="numeric" name="sales_w4" id="sales_w4"
+                         class="currency-input"
+                         placeholder="contoh: 1.687.592.160"
+                         value="{{ form_data.get('sales_w4', '') }}" required>
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- External & Holiday Scenario -->
+            <div class="form-section-title">
+              <i class="fa-solid fa-cloud-sun"></i> Faktor Eksternal & Skenario
+            </div>
+
+            <label class="toggle-card" for="holiday_flag">
+              <div class="toggle-info">
+                <i class="fa-solid fa-calendar-day"></i>
+                <span>Tandai Minggu Depan Hari Libur (Holiday Week)</span>
+              </div>
+              <div class="switch">
+                <input type="checkbox" name="holiday_flag" id="holiday_flag"
+                       {% if form_data.get('holiday_flag') == 'on' %}checked{% endif %}>
+                <span class="slider"></span>
+              </div>
+            </label>
+
+            <div class="grid-inputs" style="margin-top: 16px;">
+              <div class="form-group">
+                <label for="temperature">Temperature (°F)</label>
+                <input type="number" step="0.01" name="temperature" id="temperature"
+                       placeholder="Default historis"
+                       value="{{ form_data.get('temperature', '') }}">
+              </div>
+
+              <div class="form-group">
+                <label for="fuel_price">
+                  Fuel Price <span class="sub-label">(Rp / Galon)</span>
+                </label>
+                <div class="input-group-prefix">
+                  <span class="input-prefix-badge">Rp</span>
+                  <input type="text" inputmode="numeric" name="fuel_price" id="fuel_price"
+                         class="currency-input"
+                         placeholder="contoh: 46.000"
+                         value="{{ form_data.get('fuel_price', '') }}">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="cpi">CPI (Indeks)</label>
+                <input type="number" step="0.0001" name="cpi" id="cpi"
+                       placeholder="Default historis"
+                       value="{{ form_data.get('cpi', '') }}">
+              </div>
+
+              <div class="form-group">
+                <label for="unemployment">Unemployment(%)</label>
+                <input type="number" step="0.001" name="unemployment" id="unemployment"
+                       placeholder="Default historis"
+                       value="{{ form_data.get('unemployment', '') }}">
+              </div>
+            </div>
+
+
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit">
+              <i class="fa-solid fa-calculator"></i> Hitung Prediksi Weekly Sales
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- RIGHT PANEL: PREDICTION RESULTS                          -->
+      <!-- ======================================================== -->
+      <section class="panel-card">
+        <div class="panel-header">
+          <h2><i class="fa-solid fa-square-poll-vertical"></i> Hasil Prediksi</h2>
+        </div>
+        <div class="panel-body">
+          
+          <!-- ERROR DISPLAY -->
+          {% if error %}
+            <div class="error-card">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <div>
+                <h4>Terjadi Kesalahan</h4>
+                <p>{{ error }}</p>
+              </div>
+            </div>
+          {% endif %}
+
+          <!-- RESULT DISPLAY -->
+          {% if result %}
+            {% set pred_idr = result.predicted_weekly_sales_idr %}
+            {% set lag1 = result.features_used.get('Lag_1', 0) %}
+            {% set roll4 = result.features_used.get('Roll_Mean_4', 0) %}
+
+            <!-- Large Currency Result Banner -->
+            <div class="result-banner">
+              <div class="result-amount">
+                Rp {{ "{:,.0f}".format(pred_idr).replace(",", ".") }}
+              </div>
+              {% if pred_idr >= 1000000000 %}
+                <div style="font-size: 13.5px; color: #A7F3D0; font-weight: 700; margin-bottom: 10px;">
+                  <i class="fa-solid fa-coins"></i> ≈ {{ "{:.2f}".format(pred_idr / 1000000000) }} Miliar Rupiah
+                </div>
+              {% elif pred_idr >= 1000000 %}
+                <div style="font-size: 13.5px; color: #A7F3D0; font-weight: 700; margin-bottom: 10px;">
+                  <i class="fa-solid fa-coins"></i> ≈ {{ "{:.2f}".format(pred_idr / 1000000) }} Juta Rupiah
+                </div>
+              {% endif %}
+              <div class="result-meta">
+                <span><i class="fa-solid fa-store"></i> Store {{ result.store }}</span>
+              </div>
+            </div>
+
+            <!-- Key Feature Metrics Grid -->
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <div>
+                  <div class="label"><i class="fa-solid fa-arrow-trend-up"></i> Penjualan Minggu Terakhir</div>
+                  <div class="value">Rp {{ "{:,.0f}".format(lag1).replace(",", ".") }}</div>
+                </div>
+                <div class="sub-value">
+                  {% if lag1 >= 1000000000 %}
+                    <span class="badge-miliar">= {{ "{:.2f}".format(lag1 / 1000000000) }} Miliar Rupiah</span>
+                  {% elif lag1 >= 1000000 %}
+                    <span class="badge-juta">= {{ "{:.2f}".format(lag1 / 1000000) }} Juta Rupiah</span>
+                  {% endif %}
+                </div>
+              </div>
+
+              <div class="metric-card">
+                <div>
+                  <div class="label"><i class="fa-solid fa-calculator"></i> Rata-rata 4 Minggu</div>
+                  <div class="value">Rp {{ "{:,.0f}".format(roll4).replace(",", ".") }}</div>
+                </div>
+                <div class="sub-value">
+                  {% if roll4 >= 1000000000 %}
+                    <span class="badge-miliar">= {{ "{:.2f}".format(roll4 / 1000000000) }} Miliar Rupiah</span>
+                  {% elif roll4 >= 1000000 %}
+                    <span class="badge-juta">= {{ "{:.2f}".format(roll4 / 1000000) }} Juta Rupiah</span>
+                  {% endif %}
+                </div>
+              </div>
+
+              <div class="metric-card">
+                <div>
+                  <div class="label"><i class="fa-solid fa-calendar-day"></i> Status Minggu</div>
+                  <div class="value">
+                    {% if result.features_used.get('Holiday_Flag') == 1 %}
+                      <span class="badge-holiday"><i class="fa-solid fa-gift"></i> Holiday Week</span>
+                    {% else %}
+                      <span class="badge-normal"><i class="fa-solid fa-briefcase"></i> Normal Week</span>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="sub-value" style="font-size: 11px; color: var(--slate-500);">
+                  {% if result.features_used.get('Holiday_Flag') == 1 %}
+                    Terdapat Libur Nasional
+                  {% else %}
+                    Minggu Kerja Normal
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+
+          {% elif not error %}
+            <!-- INITIAL PLACEHOLDER STATE -->
+            <div class="placeholder-state">
+              <div class="placeholder-icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <h3>Siap Memprediksi Penjualan</h3>
+              <p>Masukkan data penjualan 4 minggu terakhir pada form di <strong>sisi kiri</strong>, lalu tekan tombol untuk menampilkan proyeksi hasil di sini.</p>
+              
+              <div class="steps-list">
+                <div class="steps-list-item">
+                  <div class="step-num">1</div>
+                  <span>Masukkan <strong>Store ID (1-45)</strong> atau pilih dari Grid Toko.</span>
+                </div>
+                <div class="steps-list-item">
+                  <div class="step-num">2</div>
+                  <span>Isi 4 nilai nominal penjualan mingguan (W1 s/d W4).</span>
+                </div>
+                <div class="steps-list-item">
+                  <div class="step-num">3</div>
+                  <span>Atur opsional skenario (Holiday/Suhu/BBM/CPI/Pengangguran).</span>
+                </div>
+                <div class="steps-list-item">
+                  <div class="step-num">4</div>
+                  <span>Klik <strong>Hitung Prediksi Sales</strong> untuk memicu model XGBoost.</span>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+
+
+  <!-- Modal Quick Selector Grid for Store -->
+  <div class="modal-overlay" id="store-modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h3><i class="fa-solid fa-store"></i> Pilih Store (1 - 45)</h3>
+          <p>Klik nomor toko untuk memilih secara instan</p>
+        </div>
+        <button type="button" class="modal-close" id="close-store-modal">&times;</button>
+      </div>
+      <div class="modal-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="store-search-input" placeholder="Cari store (contoh: 14)...">
+      </div>
+      <div class="modal-grid" id="store-grid">
+        {% for s in stores %}
+          <button type="button" class="store-chip {% if s == selected_store %}active{% endif %}" data-store="{{ s }}">
+            <span class="store-chip-num">{{ s }}</span>
+            <span class="store-chip-label">Store {{ s }}</span>
+          </button>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const storeInput = document.getElementById('store');
+      const modalOverlay = document.getElementById('store-modal-overlay');
+      const openModalBtn = document.getElementById('open-store-modal');
+      const closeModalBtn = document.getElementById('close-store-modal');
+      const searchInput = document.getElementById('store-search-input');
+      const chips = document.querySelectorAll('.store-chip');
+
+      function openModal() {
+        modalOverlay.classList.add('active');
+        searchInput.value = '';
+        filterChips('');
+        searchInput.focus();
+      }
+
+      function closeModal() {
+        modalOverlay.classList.remove('active');
+      }
+
+      openModalBtn.addEventListener('click', openModal);
+      closeModalBtn.addEventListener('click', closeModal);
+      modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+      });
+
+      function filterChips(query) {
+        const q = query.trim().toLowerCase();
+        chips.forEach(chip => {
+          const storeNum = chip.getAttribute('data-store');
+          if (!q || storeNum.includes(q)) {
+            chip.style.display = 'flex';
+          } else {
+            chip.style.display = 'none';
+          }
+        });
+      }
+
+      searchInput.addEventListener('input', (e) => {
+        filterChips(e.target.value);
+      });
+
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          const val = chip.getAttribute('data-store');
+          storeInput.value = val;
+          chips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          closeModal();
+        });
+      });
+
+      storeInput.addEventListener('input', () => {
+        const currentVal = storeInput.value.trim();
+        chips.forEach(chip => {
+          if (chip.getAttribute('data-store') === currentVal) {
+            chip.classList.add('active');
+          } else {
+            chip.classList.remove('active');
+          }
+        });
+      });
+
+      // Auto-format nominal Rupiah dengan pemisah titik ribuan
+      const currencyInputs = document.querySelectorAll('.currency-input');
+      currencyInputs.forEach(input => {
+        input.addEventListener('input', (e) => {
+          let rawValue = e.target.value.replace(/[^0-9]/g, '');
+          if (rawValue) {
+            e.target.value = parseInt(rawValue, 10).toLocaleString('id-ID');
+          } else {
+            e.target.value = '';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

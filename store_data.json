@@ -1,0 +1,812 @@
+{
+  "1": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 69.16,
+    "fuel_price": 62732.85799999999,
+    "cpi": 223.4442513,
+    "unemployment": 6.573,
+    "expanding_mean": 27836108486.09317,
+    "row_count": 139,
+    "last_4_sales": [
+      29895373361.21,
+      28146991789.33,
+      26983874501.61,
+      26726053727.82
+    ]
+  },
+  "2": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 69.79,
+    "fuel_price": 62732.85799999999,
+    "cpi": 223.0783366,
+    "unemployment": 6.17,
+    "expanding_mean": 31152540345.85852,
+    "row_count": 139,
+    "last_4_sales": [
+      35755958368.72,
+      34010032611.09,
+      33066092406.13,
+      32823963256.55
+    ]
+  },
+  "3": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 74.66,
+    "fuel_price": 62732.85799999999,
+    "cpi": 226.9873637,
+    "unemployment": 6.034,
+    "expanding_mean": 23170109158.521667,
+    "row_count": 139,
+    "last_4_sales": [
+      7936577031.45,
+      7350522950.27,
+      7595812540.44,
+      7254407301.1
+    ]
+  },
+  "4": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 63.64,
+    "fuel_price": 62876.00199999999,
+    "cpi": 131.1930968,
+    "unemployment": 3.879,
+    "expanding_mean": 26746027756.489067,
+    "row_count": 139,
+    "last_4_sales": [
+      39540585348.99,
+      38166235470.51,
+      37526395747.05,
+      38462693672.78
+    ]
+  },
+  "5": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 71.7,
+    "fuel_price": 62732.85799999999,
+    "cpi": 224.0378139,
+    "unemployment": 5.422,
+    "expanding_mean": 22534820486.261803,
+    "row_count": 139,
+    "last_4_sales": [
+      6138163052.97,
+      5821405421.13,
+      5606917377.95,
+      5717721927.61
+    ]
+  },
+  "6": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 72.34,
+    "fuel_price": 62732.85799999999,
+    "cpi": 225.0686254,
+    "unemployment": 5.329,
+    "expanding_mean": 23448096806.67345,
+    "row_count": 139,
+    "last_4_sales": [
+      27164753765.03,
+      26112987658.12,
+      25710165233.07,
+      25612511501.62
+    ]
+  },
+  "7": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 42.53,
+    "fuel_price": 65953.598,
+    "cpi": 199.2195317,
+    "unemployment": 7.557,
+    "expanding_mean": 21558299457.199963,
+    "row_count": 139,
+    "last_4_sales": [
+      9050826210.08,
+      9008480099.49,
+      9240389483.19,
+      8866755909.04
+    ]
+  },
+  "8": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 64.74,
+    "fuel_price": 62732.85799999999,
+    "cpi": 227.0369359,
+    "unemployment": 5.124,
+    "expanding_mean": 20896312911.39078,
+    "row_count": 139,
+    "last_4_sales": [
+      17471369705.86,
+      16595972037.07,
+      16109242356.75,
+      15954677075.92
+    ]
+  },
+  "9": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 69.52,
+    "fuel_price": 62732.85799999999,
+    "cpi": 227.2328068,
+    "unemployment": 4.954,
+    "expanding_mean": 19655913628.464344,
+    "row_count": 139,
+    "last_4_sales": [
+      10856672582.9,
+      9992610666.4,
+      9698175267.78,
+      9836345550.57
+    ]
+  },
+  "10": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 70.5,
+    "fuel_price": 76957.793,
+    "cpi": 131.1930968,
+    "unemployment": 6.943,
+    "expanding_mean": 21090916714.26729,
+    "row_count": 139,
+    "last_4_sales": [
+      31473274902.34,
+      30666617845.23,
+      31041399434.26,
+      31211637551.65
+    ]
+  },
+  "11": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 74.26,
+    "fuel_price": 62732.85799999999,
+    "cpi": 226.9873637,
+    "unemployment": 6.034,
+    "expanding_mean": 21381685804.368183,
+    "row_count": 139,
+    "last_4_sales": [
+      25458057694.18,
+      23474991355.37,
+      22045485409.74,
+      21484652048.85
+    ]
+  },
+  "12": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 65.95,
+    "fuel_price": 76957.793,
+    "cpi": 131.1930968,
+    "unemployment": 10.199,
+    "expanding_mean": 21104744349.378082,
+    "row_count": 139,
+    "last_4_sales": [
+      17532025186.56,
+      16728478290.71,
+      17194196578.99,
+      17440264156.8
+    ]
+  },
+  "13": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 46.97,
+    "fuel_price": 67188.215,
+    "cpi": 131.1930968,
+    "unemployment": 5.621,
+    "expanding_mean": 22238748644.012608,
+    "row_count": 139,
+    "last_4_sales": [
+      36536052014.82,
+      35769528419.92,
+      36108255613.95,
+      36415648586.38
+    ]
+  },
+  "14": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 58.85,
+    "fuel_price": 69460.626,
+    "cpi": 192.3088989,
+    "unemployment": 8.667,
+    "expanding_mean": 23236071096.35776,
+    "row_count": 139,
+    "last_4_sales": [
+      30196086518.88,
+      29337105319.73,
+      28454785564.96,
+      30496070894.66
+    ]
+  },
+  "15": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 55.75,
+    "fuel_price": 72842.40299999999,
+    "cpi": 138.7281613,
+    "unemployment": 7.992,
+    "expanding_mean": 22431073041.227695,
+    "row_count": 139,
+    "last_4_sales": [
+      10261611165.52,
+      9873350779.59,
+      9942295013.61,
+      9992768124.8
+    ]
+  },
+  "16": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 40.99,
+    "fuel_price": 65953.598,
+    "cpi": 199.2195317,
+    "unemployment": 5.847,
+    "expanding_mean": 21610154608.442856,
+    "row_count": 139,
+    "last_4_sales": [
+      8432643100.24,
+      8800084980.67,
+      10327821170.21,
+      8512955115.02
+    ]
+  },
+  "17": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 39.94,
+    "fuel_price": 67188.215,
+    "cpi": 131.1930968,
+    "unemployment": 5.527,
+    "expanding_mean": 21279119990.071827,
+    "row_count": 139,
+    "last_4_sales": [
+      17045035878.81,
+      16459383137.62,
+      17129985938.12,
+      16881424433.97
+    ]
+  },
+  "18": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 56.09,
+    "fuel_price": 70086.881,
+    "cpi": 138.7281613,
+    "unemployment": 8.243,
+    "expanding_mean": 21174917428.400497,
+    "row_count": 139,
+    "last_4_sales": [
+      19542820307.47,
+      19218495547.0,
+      18764509877.75,
+      20174648261.25
+    ]
+  },
+  "19": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 56.49,
+    "fuel_price": 72842.40299999999,
+    "cpi": 138.7281613,
+    "unemployment": 7.992,
+    "expanding_mean": 21422071859.85496,
+    "row_count": 139,
+    "last_4_sales": [
+      25193632077.3,
+      24205820383.5,
+      23638484348.55,
+      23656656658.28
+    ]
+  },
+  "20": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 60.04,
+    "fuel_price": 69460.626,
+    "cpi": 216.1515902,
+    "unemployment": 7.293,
+    "expanding_mean": 22237080371.508564,
+    "row_count": 139,
+    "last_4_sales": [
+      40195047947.77,
+      38701688684.48,
+      35774610926.57,
+      36352323291.15
+    ]
+  },
+  "21": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 70.5,
+    "fuel_price": 62732.85799999999,
+    "cpi": 223.0783366,
+    "unemployment": 6.17,
+    "expanding_mean": 21822863869.096905,
+    "row_count": 139,
+    "last_4_sales": [
+      11662101106.63,
+      11684906271.92,
+      11476000129.02,
+      12081404952.91
+    ]
+  },
+  "22": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 57.58,
+    "fuel_price": 70086.881,
+    "cpi": 142.7624113,
+    "unemployment": 7.543,
+    "expanding_mean": 21667036534.03259,
+    "row_count": 139,
+    "last_4_sales": [
+      18069914532.48,
+      17965284857.12,
+      17499854109.35,
+      19582505192.17
+    ]
+  },
+  "23": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 50.56,
+    "fuel_price": 70086.881,
+    "cpi": 138.7281613,
+    "unemployment": 4.145,
+    "expanding_mean": 21806477934.02602,
+    "row_count": 139,
+    "last_4_sales": [
+      26206384644.87,
+      25281471498.25,
+      24390946192.61,
+      24110004978.87
+    ]
+  },
+  "24": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 55.16,
+    "fuel_price": 72842.40299999999,
+    "cpi": 138.7281613,
+    "unemployment": 8.693,
+    "expanding_mean": 21909652637.49327,
+    "row_count": 139,
+    "last_4_sales": [
+      25349380622.22,
+      25341876834.81,
+      22463137732.12,
+      23389412714.97
+    ]
+  },
+  "25": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 56.69,
+    "fuel_price": 69460.626,
+    "cpi": 216.1515902,
+    "unemployment": 7.293,
+    "expanding_mean": 21539170886.542664,
+    "row_count": 139,
+    "last_4_sales": [
+      12516810709.89,
+      12477100417.13,
+      12266221392.05,
+      12327220239.42
+    ]
+  },
+  "26": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 46.95,
+    "fuel_price": 70086.881,
+    "cpi": 138.7281613,
+    "unemployment": 7.138,
+    "expanding_mean": 21401152111.925655,
+    "row_count": 139,
+    "last_4_sales": [
+      19601857724.18,
+      18691737973.17,
+      17456017511.86,
+      17152584081.4
+    ]
+  },
+  "27": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 58.99,
+    "fuel_price": 72842.40299999999,
+    "cpi": 142.7624113,
+    "unemployment": 8.0,
+    "expanding_mean": 21785296005.412506,
+    "row_count": 139,
+    "last_4_sales": [
+      28482379433.84,
+      29703834521.97,
+      28993356276.32,
+      30472633211.82
+    ]
+  },
+  "28": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 65.95,
+    "fuel_price": 76957.793,
+    "cpi": 131.1930968,
+    "unemployment": 10.199,
+    "expanding_mean": 21853521205.602303,
+    "row_count": 139,
+    "last_4_sales": [
+      26176403849.79,
+      21570668352.03,
+      20464662120.64,
+      21719607894.73
+    ]
+  },
+  "29": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 57.58,
+    "fuel_price": 70086.881,
+    "cpi": 138.7281613,
+    "unemployment": 9.151,
+    "expanding_mean": 21432812509.559578,
+    "row_count": 139,
+    "last_4_sales": [
+      9315682690.4,
+      9192296141.0,
+      9249057031.32,
+      9572230377.24
+    ]
+  },
+  "30": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 70.5,
+    "fuel_price": 62732.85799999999,
+    "cpi": 223.0783366,
+    "unemployment": 6.17,
+    "expanding_mean": 20979965379.633804,
+    "row_count": 139,
+    "last_4_sales": [
+      7993723694.85,
+      7776177201.18,
+      7828854729.97,
+      7862622578.5
+    ]
+  },
+  "31": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 70.5,
+    "fuel_price": 62732.85799999999,
+    "cpi": 223.0783366,
+    "unemployment": 6.17,
+    "expanding_mean": 21109123886.26405,
+    "row_count": 139,
+    "last_4_sales": [
+      24394690839.65,
+      25070122424.06,
+      24669623941.85,
+      23980781017.15
+    ]
+  },
+  "32": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 47.22,
+    "fuel_price": 65953.598,
+    "cpi": 199.2195317,
+    "unemployment": 7.557,
+    "expanding_mean": 21101547321.619556,
+    "row_count": 139,
+    "last_4_sales": [
+      21521257369.32,
+      21054358679.83,
+      21458932829.58,
+      21829089435.97
+    ]
+  },
+  "33": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 73.7,
+    "fuel_price": 76957.793,
+    "cpi": 131.1930968,
+    "unemployment": 6.895,
+    "expanding_mean": 20603030061.85669,
+    "row_count": 139,
+    "last_4_sales": [
+      4749605595.7,
+      5220840116.95,
+      4552199999.62,
+      4540011109.09
+    ]
+  },
+  "34": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 57.95,
+    "fuel_price": 62876.00199999999,
+    "cpi": 131.1930968,
+    "unemployment": 8.839,
+    "expanding_mean": 20505877898.992363,
+    "row_count": 139,
+    "last_4_sales": [
+      17336468295.24,
+      16973539387.27,
+      17240196798.04,
+      17123382884.33
+    ]
+  },
+  "35": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 58.99,
+    "fuel_price": 69460.626,
+    "cpi": 142.7624113,
+    "unemployment": 8.665,
+    "expanding_mean": 20390381886.274803,
+    "row_count": 139,
+    "last_4_sales": [
+      15496490309.2,
+      15632096704.02,
+      14838390600.31,
+      15479907076.8
+    ]
+  },
+  "36": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 74.39,
+    "fuel_price": 62518.14200000001,
+    "cpi": 222.1136566,
+    "unemployment": 6.228,
+    "expanding_mean": 20009981823.98882,
+    "row_count": 139,
+    "last_4_sales": [
+      4958827728.98,
+      5372137957.05,
+      5141733374.65,
+      4875653013.13
+    ]
+  },
+  "37": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 74.39,
+    "fuel_price": 62732.85799999999,
+    "cpi": 222.1136566,
+    "unemployment": 6.228,
+    "expanding_mean": 19720054937.580627,
+    "row_count": 139,
+    "last_4_sales": [
+      9771767566.41,
+      9336759749.75,
+      9876383106.3,
+      9568074727.99
+    ]
+  },
+  "38": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 65.95,
+    "fuel_price": 76957.793,
+    "cpi": 131.1930968,
+    "unemployment": 10.199,
+    "expanding_mean": 19382630330.024525,
+    "row_count": 139,
+    "last_4_sales": [
+      8203564925.93,
+      7824978569.38,
+      7672633988.78,
+      7466576769.34
+    ]
+  },
+  "39": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 72.9,
+    "fuel_price": 62732.85799999999,
+    "cpi": 222.1136566,
+    "unemployment": 6.228,
+    "expanding_mean": 19550814960.805714,
+    "row_count": 139,
+    "last_4_sales": [
+      28170894332.31,
+      26739604633.51,
+      28225962902.69,
+      28083099286.0
+    ]
+  },
+  "40": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 49.65,
+    "fuel_price": 70086.881,
+    "cpi": 138.7281613,
+    "unemployment": 4.145,
+    "expanding_mean": 19493458190.13348,
+    "row_count": 139,
+    "last_4_sales": [
+      19129621016.0,
+      17580288691.18,
+      16428824756.5,
+      16484186056.36
+    ]
+  },
+  "41": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 41.8,
+    "fuel_price": 65953.598,
+    "cpi": 199.2195317,
+    "unemployment": 6.195,
+    "expanding_mean": 19571287678.52663,
+    "row_count": 139,
+    "last_4_sales": [
+      25053079878.35,
+      25220988148.21,
+      23729647215.32,
+      23556896562.87
+    ]
+  },
+  "42": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 70.5,
+    "fuel_price": 76957.793,
+    "cpi": 131.1930968,
+    "unemployment": 6.943,
+    "expanding_mean": 19342470882.305935,
+    "row_count": 139,
+    "last_4_sales": [
+      10613457149.29,
+      10957313550.7,
+      9687395093.14,
+      9210530539.44
+    ]
+  },
+  "43": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 69.17,
+    "fuel_price": 62732.85799999999,
+    "cpi": 214.7415392,
+    "unemployment": 8.839,
+    "expanding_mean": 19156316686.46308,
+    "row_count": 139,
+    "last_4_sales": [
+      11498308226.77,
+      11082382399.96,
+      11163786782.39,
+      10513990320.15
+    ]
+  },
+  "44": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 46.97,
+    "fuel_price": 67188.215,
+    "cpi": 131.1930968,
+    "unemployment": 5.217,
+    "expanding_mean": 18843894419.843338,
+    "row_count": 139,
+    "last_4_sales": [
+      6036927142.92,
+      6044186154.09,
+      5793158815.61,
+      6460573083.51
+    ]
+  },
+  "45": {
+    "last_date": "2012-10-26",
+    "month": 10,
+    "week": 43,
+    "day_of_year": 300,
+    "temperature": 58.85,
+    "fuel_price": 69460.626,
+    "cpi": 192.3088989,
+    "unemployment": 8.667,
+    "expanding_mean": 18737736848.760918,
+    "row_count": 139,
+    "last_4_sales": [
+      13123711567.51,
+      13141770793.48,
+      12849420108.29,
+      13603715626.99
+    ]
+  }
+}

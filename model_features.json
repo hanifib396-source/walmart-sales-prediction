@@ -1,0 +1,18 @@
+[
+    "Store",
+    "Holiday_Flag",
+    "Temperature",
+    "Fuel_Price",
+    "CPI",
+    "Unemployment",
+    "Month",
+    "Week_sin",
+    "Week_cos",
+    "DayOfYear",
+    "Lag_1",
+    "Lag_2",
+    "Lag_4",
+    "Roll_Mean_4",
+    "Roll_Std_4",
+    "Store_Expanding_Mean"
+]
